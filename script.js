@@ -1,6 +1,4 @@
-//https://levelup.gitconnected.com/combining-api-calls-with-javascript-try-catch-ba1b7b9303a5
-
-const getCams = async function(){ //La fonction "getCams" récupère les données et définit ensuite les informations à afficher dans le "innerHTML".
+const getCams = async function(){ 
     try {
         const response = await fetch('http://localhost:3000/api/cameras/')
         const data = await response.json();
@@ -14,8 +12,7 @@ const getCams = async function(){ //La fonction "getCams" récupère les donnée
 };
 
 getCams()
-.then(function(result) { //On exécute ici, la fonction "getCams" avec le résultat de la promesse et on fait un console.log pour renvoyer les données en toute sécurité.
-    // console.log(result);
+.then(function(result) { 
 
     for (let i = 0; i < result.length; i++) {    
         const image = result[i].imageUrl;
